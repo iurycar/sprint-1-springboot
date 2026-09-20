@@ -1,5 +1,11 @@
 package com.fiap.ec.sprint1_mobile.model;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "equipamentos")
@@ -13,12 +19,14 @@ public class Equipamento {
 
     private String nome;
     @Column(nullable = false)
+    private String descricao;
 
     public Equipamento() {
     }
 
     public Equipamento(String nome, String descricao) {
-        this.nome = nome;
+        this.nome = nome; 
+        this.descricao = descricao;
     }
 
     public Long getId() {
@@ -28,8 +36,13 @@ public class Equipamento {
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    public String getDescricao() {
+        return descricao;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

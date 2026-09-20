@@ -33,6 +33,7 @@ public class EquipamentoService {
         Equipamento equipamentoExistente = obterPorId(id);
 
         equipamentoExistente.setNome(equipamentoAtualizado.getNome());
+        equipamentoExistente.setDescricao(equipamentoAtualizado.getDescricao());
 
         return repository.save(equipamentoExistente);
     }
