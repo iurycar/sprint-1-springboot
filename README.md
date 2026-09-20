@@ -20,9 +20,17 @@ API REST desenvolvida em Spring Boot para a Sprint 1, seguindo a arquitetura em 
 	- `./mvnw spring-boot:run`
 2. A API sobe com persistência em H2 file mode.
 3. O console do H2 fica disponível em `/h2-console`.
+4. 
 
 ## Persistência
 
 - Banco: H2
 - Modo: file
 - Arquivo gerado em `./data/sprint1-mobile-db`
+
+---
+
+## Alterações realizadas na Sprint 3
+
+- Habilitação de CORS no `EquipamentoController` para permitir a comunicação com o frontend.
+- Disponibilização dos endpoints REST de equipamentos para integração com o aplicativo.
