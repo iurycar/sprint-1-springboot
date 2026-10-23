@@ -4,11 +4,11 @@
 
 Este projeto consiste em uma API REST desenvolvida em Java com Spring Boot para o gerenciamento de equipamentos.
 
-A API permite cadastrar, consultar, atualizar e excluir equipamentos. Ela também é utilizada pelo aplicativo frontend desenvolvido com React Native e Expo, possibilitando a integração entre a interface e a camada de dados.
+A API permite cadastrar, consultar, atualizar e excluir equipamentos. Ela é integrada ao aplicativo frontend desenvolvido com React Native e Expo, permitindo a comunicação entre a interface e a camada de dados.
 
 ## Tecnologias utilizadas
 
-- Java
+- Java 17
 - Spring Boot
 - Maven
 - API REST
@@ -21,8 +21,8 @@ A API permite cadastrar, consultar, atualizar e excluir equipamentos. Ela també
 - Consultar um equipamento pelo ID.
 - Atualizar informações de um equipamento.
 - Excluir equipamentos.
-- Persistir os dados utilizando o banco H2 configurado no projeto.
-- Permitir a comunicação com o frontend.
+- Persistir dados utilizando o banco H2 configurado no projeto.
+- Permitir a comunicação com o frontend por meio da API.
 
 ## Arquitetura do projeto
 
@@ -99,7 +99,7 @@ Retorna os equipamentos cadastrados.
 POST http://localhost:8080/equipamentos
 ```
 
-No Postman, selecione `Body`, depois `raw` e `JSON`. Utilize um corpo compatível com os campos definidos na entidade `Equipamento`. Por exemplo, caso ela utilize os campos `nome` e `descricao`:
+No Postman, selecione `Body`, depois `raw` e `JSON`. Utilize um corpo compatível com os campos definidos na entidade `Equipamento`. Por exemplo:
 
 ```json
 {
@@ -126,15 +126,15 @@ Essa requisição solicita a exclusão do equipamento com o ID informado.
 
 ## Banco de dados
 
-O projeto utiliza o banco de dados H2, configurado para persistência em arquivo, conforme as configurações da aplicação.
+O projeto utiliza o banco de dados H2 configurado para persistência em arquivo.
 
-O arquivo do banco está configurado no caminho:
+O caminho configurado para o banco é:
 
 ```text
 ./data/sprint1-mobile-db
 ```
 
-A aplicação também disponibiliza o console H2 em:
+O console H2 está disponível em:
 
 ```text
 http://localhost:8080/h2-console
@@ -146,12 +146,16 @@ O acesso depende das configurações de conexão definidas no projeto.
 
 O backend fornece os endpoints consumidos pelo aplicativo frontend, permitindo que as operações realizadas pela interface sejam processadas pela API.
 
-Para que a integração funcione, o backend precisa estar em execução e o frontend deve estar configurado para acessar o endereço correto da API.
+O frontend realiza requisições aos endpoints para listar, cadastrar e consultar equipamentos. Para que a integração funcione, o backend precisa estar em execução e o frontend deve estar configurado para acessar o endereço correto da API.
 
 ## Repositórios
 
 - **Backend:** https://github.com/iurycar/sprint-1-springboot
 - **Frontend:** https://github.com/iurycar/sprint-2-frontend
+
+## Vídeo de demonstração
+
+[Assistir ao vídeo da Sprint 4 no YouTube](https://youtu.be/yEYw_4pG1Oo)
 
 ## Execução completa
 
@@ -159,3 +163,4 @@ Para que a integração funcione, o backend precisa estar em execução e o fron
 2. Confirme que a API está disponível na porta 8080.
 3. Execute o frontend em outro terminal.
 4. Utilize o aplicativo ou o Postman para testar as operações de cadastro, consulta, atualização e exclusão.
+5. Interrompa o backend e verifique o comportamento do aplicativo quando a API estiver indisponível.
